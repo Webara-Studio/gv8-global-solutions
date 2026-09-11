@@ -123,12 +123,12 @@ nav a:hover,
   margin-left: 7px;
 }
 .hero {
-  min-height: 625px;
-  padding: clamp(70px, 9vw, 130px) clamp(22px, 9vw, 150px) 82px;
-  display: flex;
+  min-height: 650px;
+  padding: clamp(70px, 9vw, 130px) clamp(22px, 9vw, 150px) 96px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(370px, 0.78fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 70px;
+  gap: clamp(40px, 5vw, 80px);
   position: relative;
   overflow: hidden;
   background: linear-gradient(
@@ -260,16 +260,19 @@ nav a:hover,
   color: var(--muted);
   font-size: 10px;
 }
+.hero h1 {
+  font-size: clamp(54px, 6vw, 84px);
+}
 .hero-visual {
   position: relative;
   z-index: 2;
-  width: min(500px, 41vw);
-  min-height: 425px;
+  width: 100%;
+  min-height: 460px;
 }
 .hero-image {
   width: 100%;
-  height: 100%;
-  min-height: 425px;
+  height: 460px;
+  min-height: 0;
   object-fit: cover;
   object-position: 72% center;
   display: block;
@@ -279,9 +282,10 @@ nav a:hover,
 .route-card {
   position: absolute;
   z-index: 2;
-  width: min(320px, 75%);
-  right: -34px;
-  bottom: 20px;
+  width: min(280px, 72%);
+  left: -24px;
+  right: auto;
+  bottom: 22px;
   background: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 15px 35px rgba(54, 54, 54, 0.16);
@@ -800,18 +804,24 @@ footer {
     opacity: 0.8;
   }
   .hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     width: 100%;
-    min-height: 300px;
+    min-height: 0;
     margin-top: 43px;
   }
   .hero-image {
-    min-height: 300px;
+    height: 265px;
+    min-height: 0;
     object-position: 70% center;
   }
   .route-card {
-    width: calc(100% - 26px);
-    right: 13px;
-    bottom: 14px;
+    position: relative;
+    width: 100%;
+    left: auto;
+    right: auto;
+    bottom: auto;
   }
   .proof {
     grid-template-columns: 1fr 1fr;
