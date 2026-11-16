@@ -1,0 +1,2 @@
+# TypeScript incremental build cache; not required to build or run the site.
+tsconfig.tsbuildinfo

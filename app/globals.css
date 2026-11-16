@@ -123,86 +123,41 @@ nav a:hover,
   margin-left: 7px;
 }
 .hero {
-  min-height: 650px;
-  padding: clamp(70px, 9vw, 130px) clamp(22px, 9vw, 150px) 96px;
-  display: grid;
-  grid-template-columns: minmax(0, 1.22fr) minmax(370px, 0.78fr);
+  min-height: 690px;
+  padding: clamp(90px, 10vw, 145px) clamp(24px, 9vw, 150px) 150px;
+  display: flex;
   align-items: center;
-  gap: clamp(40px, 5vw, 80px);
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    105deg,
-    #fff 0%,
-    #fff 63%,
-    #f5f1f8 63%,
-    #f5f1f8 100%
-  );
-}
-.hero-grid {
-  position: absolute;
-  right: -70px;
-  top: -80px;
-  width: 52%;
-  height: 125%;
-  background-image:
-    linear-gradient(rgba(102, 45, 145, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(102, 45, 145, 0.06) 1px, transparent 1px);
-  background-size: 36px 36px;
-  transform: skewX(-11deg);
-  z-index: 0;
+  isolation: isolate;
+  color: #fff;
+  background: #241331;
 }
 .hero:after {
   content: "";
-  width: 590px;
-  height: 590px;
-  border: 1px solid rgba(102, 45, 145, 0.17);
-  border-radius: 50%;
   position: absolute;
-  right: -190px;
-  top: -85px;
-}
-.hero-orbit {
-  position: absolute;
-  border-radius: 50%;
+  inset: 0;
   z-index: 0;
+  background: linear-gradient(90deg, rgba(25, 13, 37, 0.88) 0%, rgba(35, 17, 49, 0.76) 36%, rgba(35, 17, 49, 0.35) 72%, rgba(35, 17, 49, 0.2) 100%), linear-gradient(0deg, rgba(25, 13, 37, 0.52), transparent 44%);
 }
-.orbit-one {
-  width: 410px;
-  height: 410px;
-  right: -60px;
-  bottom: -270px;
-  background: rgba(142, 69, 197, 0.07);
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #241331;
 }
-.orbit-two {
-  width: 240px;
-  height: 240px;
-  right: 240px;
-  top: -175px;
-  border: 1px solid rgba(102, 45, 145, 0.13);
+.hero-image {
+  object-fit: cover;
+  object-position: center 54%;
 }
 .hero-copy {
-  max-width: 680px;
+  width: min(680px, 66%);
   position: relative;
   z-index: 2;
 }
-.eyebrow {
-  margin: 0 0 19px;
-  color: var(--purple);
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-.eyebrow i,
-.status i {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--green);
-  margin-right: 8px;
-}
+.hero .eyebrow { color: #ffb15c; }
+.hero .eyebrow i { background: #ff9b35; }
 .hero h1,
 .section h2,
 .process h2,
@@ -214,78 +169,43 @@ nav a:hover,
   letter-spacing: -0.075em;
   font-weight: 800;
 }
-.hero h1 em,
-.section h2 em,
-.process h2 em,
-.marketplace h2 em,
-.cta h2 em {
-  font-style: normal;
-  color: var(--purple);
-}
+.hero h1 { font-size: clamp(54px, 6vw, 84px); }
+.hero h1 em { color: #f6a243; font-style: normal; }
 .hero-lede {
   margin: 28px 0;
-  color: var(--copy);
+  color: #f1eaf5;
   font-size: 15px;
   line-height: 1.8;
   max-width: 560px;
 }
-.actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .button {
   display: inline-block;
   border: 1px solid transparent;
-}
-.button-primary {
-  background: var(--purple);
-  color: #fff;
-  border-color: var(--purple);
-}
-.button-primary:hover {
-  background: var(--purple-deep);
-  border-color: var(--purple-deep);
-}
-.button-secondary {
-  background: #fff;
-  color: var(--purple);
-  border-color: var(--purple);
-}
-.button-secondary:hover {
-  background: #f6f0fa;
-}
-.hero-note {
-  margin: 22px 0 0;
-  color: var(--muted);
-  font-size: 10px;
-}
-.hero h1 {
-  font-size: clamp(54px, 6vw, 84px);
-}
-.hero-visual {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  min-height: 460px;
-}
-.hero-image {
-  width: 100%;
-  height: 460px;
-  min-height: 0;
-  object-fit: cover;
-  object-position: 72% center;
-  display: block;
   border-radius: 2px;
-  box-shadow: 0 18px 45px rgba(54, 54, 54, 0.18);
+  padding: 15px 18px;
+  min-height: 46px;
+  font-size: 11px;
+  line-height: 1.1;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  transition: background 0.2s, color 0.2s, border 0.2s;
 }
+.button-primary { background: #f28c28; color: #241331; border-color: #f28c28; }
+.button-primary:hover { background: #ffab52; border-color: #ffab52; }
+.button-secondary { background: rgba(255,255,255,.08); color: #fff; border-color: rgba(255,255,255,.72); }
+.button-secondary:hover { background: rgba(255,255,255,.18); }
+.hero-note { margin: 22px 0 0; color: #e2d8e8; font-size: 10px; }
+.hero-visual { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+
 .route-card {
   position: absolute;
   z-index: 2;
   width: min(280px, 72%);
-  left: -24px;
-  right: auto;
-  bottom: 22px;
+  right: clamp(22px, 8vw, 120px);
+  left: auto;
+  bottom: 34px;
   background: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 15px 35px rgba(54, 54, 54, 0.16);
@@ -790,39 +710,42 @@ footer {
     font-size: 9px;
   }
   .hero {
-    min-height: auto;
+    min-height: 790px;
     display: block;
-    padding: 74px 22px 66px;
-    background: linear-gradient(145deg, #fff 0%, #fff 75%, #f4eff8 75%);
+    padding: 68px 22px 245px;
+    background: #241331;
   }
   .hero h1 {
     font-size: clamp(50px, 14vw, 74px);
   }
-  .hero-grid {
+  .hero-copy {
     width: 100%;
-    right: -210px;
-    opacity: 0.8;
+    max-width: 620px;
   }
+  .hero:after {
+    background: linear-gradient(180deg, rgba(25, 13, 37, 0.82), rgba(35, 17, 49, 0.52) 52%, rgba(25, 13, 37, 0.68));
+  }
+  .hero-image { object-position: 66% center; }
   .hero-visual {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    display: block;
+    inset: 0;
     width: 100%;
     min-height: 0;
-    margin-top: 43px;
-  }
-  .hero-image {
-    height: 265px;
-    min-height: 0;
-    object-position: 70% center;
+    margin: 0;
   }
   .route-card {
-    position: relative;
-    width: 100%;
-    left: auto;
-    right: auto;
-    bottom: auto;
+    position: absolute;
+    width: auto;
+    left: 22px;
+    right: 22px;
+    bottom: 20px;
+    padding: 14px;
   }
+  .route-map {
+    height: 88px;
+    margin: 10px 0;
+  }
+  .route-foot { margin-top: 12px; padding-top: 10px; }
   .proof {
     grid-template-columns: 1fr 1fr;
     padding: 25px 22px;

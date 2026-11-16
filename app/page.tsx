@@ -65,9 +65,17 @@ export default function Home() {
       </header>
 
       <section className="hero" id="main-content">
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-orbit orbit-one" aria-hidden="true" />
-        <div className="hero-orbit orbit-two" aria-hidden="true" />
+        <div className="hero-media" aria-hidden="true">
+          {/* Future video slot: replace this image with a muted, playsInline video using the same class. */}
+          <Image
+            className="hero-image"
+            src="/images/gv8-ghana-exporter.jpg.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+          />
+        </div>
         <div className="hero-copy">
           <p className="eyebrow">
             <i /> Ghana → United Kingdom
@@ -94,24 +102,11 @@ export default function Home() {
             </a>
           </div>
           <p className="hero-note">
-            UK warehouse capacity · Ghana-first service · Product acceptance
-            required
+            Ghana-first service · UK fulfilment · Product acceptance required
           </p>
         </div>
-        <div className="hero-visual">
-          <Image
-            className="hero-image"
-            src="/images/gv8-ghana-exporter.jpg.png"
-            alt="Ghanaian business owner preparing unbranded goods for export"
-            width={1774}
-            height={887}
-            priority
-            sizes="(max-width: 760px) 100vw, 43vw"
-          />
-          <div
-            className="route-card"
-            aria-label="Illustration of a Ghana to UK logistics route"
-          >
+        <div className="hero-visual" aria-hidden="true">
+          <div className="route-card">
             <div className="route-head">
               <span>GV8 ROUTE / 01</span>
               <strong>
@@ -125,21 +120,13 @@ export default function Home() {
               <span className="pin pin-uk">UK</span>
             </div>
             <div className="route-stages">
-              <span>
-                <b>01</b> Prepare
-              </span>
-              <span>
-                <b>02</b> Store
-              </span>
-              <span>
-                <b>03</b> Dispatch
-              </span>
+              <span><b>01</b> Prepare</span>
+              <span><b>02</b> Store</span>
+              <span><b>03</b> Dispatch</span>
             </div>
             <div className="route-foot">
               <span>UK fulfilment base</span>
-              <span className="status">
-                <i /> Capacity available
-              </span>
+              <span className="status">Subject to agreement</span>
             </div>
           </div>
         </div>
