@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { IntroExperience, IntroReplayButton } from "./intro-experience";
 
 const whatsapp =
   "https://wa.me/447773754138?text=Hello%20GV8%2C%20I%20would%20like%20to%20discuss%20sending%20my%20products%20from%20Ghana%20to%20the%20UK.";
@@ -42,6 +43,7 @@ const faqs = [
 
 export default function Home() {
   return (
+    <IntroExperience>
     <main id="top">
       <a className="skip" href="#main-content">
         Skip to content
@@ -64,7 +66,7 @@ export default function Home() {
         </a>
       </header>
 
-      <section className="hero" id="main-content">
+      <section className="hero" id="main-content" tabIndex={-1}>
         <div className="hero-media" aria-hidden="true">
           {/* Future video slot: replace this image with a muted, playsInline video using the same class. */}
           <Image
@@ -132,7 +134,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="proof" aria-label="GV8 service principles">
+      <section className="proof" aria-label="GV8 service principles" data-reveal>
         <div>
           <b>Ghana-first</b>
           <span>Built around the exporter</span>
@@ -151,7 +153,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section intro" id="services">
+      <section className="section intro" id="services" data-reveal>
         <div className="section-heading">
           <div>
             <p className="eyebrow">A practical gateway</p>
@@ -167,7 +169,7 @@ export default function Home() {
         </div>
         <div className="service-grid">
           {services.map(([number, title, copy]) => (
-            <article className="service" key={number}>
+            <article className="service" data-reveal key={number}>
               <span>{number}</span>
               <h3>{title}</h3>
               <p>{copy}</p>
@@ -188,7 +190,7 @@ export default function Home() {
           height={941}
           sizes="(max-width: 760px) 100vw, 50vw"
         />
-        <div className="process-intro">
+        <div className="process-intro" data-reveal>
           <p className="eyebrow">A disciplined starting point</p>
           <h2>
             From product to <em>UK customer.</em>
@@ -208,7 +210,7 @@ export default function Home() {
           </a>
         </div>
         <ol className="steps">
-          <li>
+          <li data-reveal>
             <b>01</b>
             <div>
               <h3>Assess</h3>
@@ -218,7 +220,7 @@ export default function Home() {
               </p>
             </div>
           </li>
-          <li>
+          <li data-reveal>
             <b>02</b>
             <div>
               <h3>Plan the route</h3>
@@ -228,7 +230,7 @@ export default function Home() {
               </p>
             </div>
           </li>
-          <li>
+          <li data-reveal>
             <b>03</b>
             <div>
               <h3>Send and receive</h3>
@@ -238,7 +240,7 @@ export default function Home() {
               </p>
             </div>
           </li>
-          <li>
+          <li data-reveal>
             <b>04</b>
             <div>
               <h3>Sell and fulfil</h3>
@@ -251,7 +253,7 @@ export default function Home() {
         </ol>
       </section>
 
-      <section className="section goods" id="goods">
+      <section className="section goods" id="goods" data-reveal>
         <div className="section-heading">
           <div>
             <p className="eyebrow">Approved products only</p>
@@ -265,7 +267,7 @@ export default function Home() {
             we accept stock.
           </p>
         </div>
-        <figure className="goods-image">
+        <figure className="goods-image" data-reveal>
           <Image
             src="/images/gv8-export-goods.jpg.png"
             alt="Examples of unbranded artisan goods prepared for an export-ready product range"
@@ -278,7 +280,7 @@ export default function Home() {
             product-specific acceptance and compliance review.
           </figcaption>
         </figure>
-        <div className="goods-grid">
+        <div className="goods-grid" data-reveal>
           <div className="good-list">
             <span>Fashion, accessories & textiles</span>
             <span>Home décor, crafts & gifts</span>
@@ -302,7 +304,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="marketplace">
+      <section className="marketplace" data-reveal>
         <div>
           <p className="eyebrow">Your UK sales base</p>
           <h2>
@@ -318,7 +320,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="section faq" id="faq">
+      <section className="section faq" id="faq" data-reveal>
         <div className="section-heading">
           <div>
             <p className="eyebrow">Clear answers first</p>
@@ -329,7 +331,7 @@ export default function Home() {
         </div>
         <div className="faq-grid">
           {faqs.map(([question, answer]) => (
-            <article key={question}>
+            <article data-reveal key={question}>
               <h3>{question}</h3>
               <p>{answer}</p>
             </article>
@@ -337,7 +339,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cta">
+      <section className="cta" data-reveal>
         <p className="eyebrow">Begin with the product</p>
         <h2>
           Ready to test your
@@ -383,8 +385,10 @@ export default function Home() {
           <a href="https://webarastudio.com" target="_blank" rel="noreferrer">
             Built by Webara <span>↗</span>
           </a>
+          <IntroReplayButton />
         </div>
       </footer>
     </main>
+    </IntroExperience>
   );
 }
