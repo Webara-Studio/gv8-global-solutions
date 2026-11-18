@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HeroVideo from "./hero-video";
 import { IntroExperience, IntroReplayButton } from "./intro-experience";
 
 const whatsapp =
@@ -68,15 +69,7 @@ export default function Home() {
 
       <section className="hero" id="main-content" tabIndex={-1}>
         <div className="hero-media" aria-hidden="true">
-          {/* Future video slot: replace this image with a muted, playsInline video using the same class. */}
-          <Image
-            className="hero-image"
-            src="/images/gv8-ghana-exporter.jpg.png"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-          />
+          <HeroVideo />
         </div>
         <div className="hero-copy">
           <p className="eyebrow">
