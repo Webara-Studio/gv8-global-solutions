@@ -706,6 +706,11 @@ footer {
 .footer-bottom a:hover {
   color: #fff;
 }
+@media (min-width: 1201px) {
+  .route-card {
+    width: clamp(380px, 34vw, 460px);
+  }
+}
 @media (min-width: 761px) and (max-width: 1200px) {
   .hero {
     min-height: 0;
