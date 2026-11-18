@@ -1218,6 +1218,10 @@ html.motion-ready [data-reveal].is-in-view { opacity: 1; transform: none; }
   .service:hover, .route-card:hover, .button:hover { transform: none; }
 }
 @media (max-width: 380px) {
+  .nav { padding-right: 14px; padding-left: 14px; }
+  .brand { gap: 7px; font-size: 16px; white-space: nowrap; }
+  .brand-mark { width: 29px; height: 29px; flex: 0 0 auto; }
+  .nav-cta { padding: 9px 8px; font-size: 8px; letter-spacing: 0; white-space: nowrap; }
   .intro-wordmark b { display: none; }
   .intro-copy { margin-top: 120px; }
   .intro-copy h2 { font-size: 37px; }
