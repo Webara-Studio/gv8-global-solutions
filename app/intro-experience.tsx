@@ -120,7 +120,7 @@ export function IntroExperience({ children }: { children: ReactNode }) {
     wasOpenRef.current = false;
     const target = triggerRef.current ?? document.querySelector<HTMLElement>("#main-content");
     triggerRef.current = null;
-    window.requestAnimationFrame(() => target?.focus());
+    window.requestAnimationFrame(() => target?.focus({ preventScroll: true }));
   }, [open]);
 
   useEffect(() => {
