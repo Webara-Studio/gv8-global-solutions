@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HeroVideo from "./hero-video";
 import { IntroExperience, IntroReplayButton } from "./intro-experience";
+import { SITE_NAME, SITE_URL } from "./site-config";
 
 const whatsapp =
   "https://wa.me/447773754138?text=Hello%20GV8%2C%20I%20would%20like%20to%20discuss%20sending%20my%20products%20from%20Ghana%20to%20the%20UK.";
@@ -42,10 +43,68 @@ const faqs = [
   ],
 ];
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      description:
+        "GV8 helps Ghanaian businesses assess export readiness, prepare approved products and use UK storage and order fulfilment.",
+      email: "hello@gv8tech.co.uk",
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+447773754138",
+        contactType: "business enquiries",
+        availableLanguage: ["English"],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      inLanguage: "en-GH",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "Service",
+      "@id": `${SITE_URL}/#export-fulfilment-service`,
+      name: "Ghana-to-UK export preparation, storage and fulfilment",
+      serviceType: "Export readiness, UK storage and order fulfilment",
+      description:
+        "A product-specific service for Ghanaian businesses preparing approved goods for UK storage, marketplace preparation and customer dispatch. Acceptance and arrangements are agreed per product.",
+      provider: { "@id": `${SITE_URL}/#organization` },
+      areaServed: [
+        { "@type": "Country", name: "Ghana" },
+        { "@type": "Country", name: "United Kingdom" },
+      ],
+      url: `${SITE_URL}/#services`,
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/#faq`,
+      mainEntity: faqs.map(([question, answer]) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: { "@type": "Answer", text: answer },
+      })),
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <IntroExperience>
     <main id="top">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <a className="skip" href="#main-content">
         Skip to content
       </a>
@@ -76,7 +135,7 @@ export default function Home() {
             <i /> Ghana → United Kingdom
           </p>
           <h1>
-            Your products deserve a <em>UK route.</em>
+            Ghana to UK export, <em>made practical.</em>
           </h1>
           <p className="hero-lede">
             GV8 Global Solutions helps Ghanaian businesses prepare approved
