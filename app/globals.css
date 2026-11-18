@@ -11,7 +11,7 @@
   --soft: #f2f2f2;
   --softest: #faf7f5;
   --line: #e1e1e1;
-  --green: #51ab62;
+  --accent-orange: #f6a243;
 }
 * {
   box-sizing: border-box;
@@ -313,7 +313,7 @@ nav a:hover,
   color: #777;
 }
 .status {
-  color: var(--green);
+  color: var(--accent-orange);
   font-weight: 600;
 }
 .status i {
@@ -482,7 +482,7 @@ nav a:hover,
 }
 .steps li > b {
   font-size: 10px;
-  color: #d6ff57;
+  color: #f6a243;
 }
 .steps h3 {
   margin: 0 0 8px;
@@ -601,7 +601,7 @@ nav a:hover,
   color: #d4bce3;
 }
 .marketplace h2 em {
-  color: #d9ff59;
+  color: #f6a243;
 }
 .marketplace > p {
   position: relative;
@@ -691,7 +691,7 @@ footer {
   color: #fff;
 }
 .footer-top > a span {
-  color: #d8ff5a;
+  color: #f6a243;
 }
 .footer-bottom {
   display: flex;
@@ -1157,7 +1157,7 @@ footer {
   cursor: pointer;
 }
 .intro-replay:hover { color: #fff; }
-.intro-replay span { color: #d8ff5a; transition: transform .2s; }
+.intro-replay span { color: #f6a243; transition: transform .2s; }
 .intro-replay:hover span { transform: translate(2px,-2px); }
 
 /* Motion is an enhancement: content stays visible unless the observer is running. */
